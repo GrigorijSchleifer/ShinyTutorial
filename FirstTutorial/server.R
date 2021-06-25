@@ -1,5 +1,6 @@
 server <- function(input, output) {
     output$hist <- renderPlot({
-        hist(rnorm(100))
+        title <- "100 random normal values"
+        hist(rnorm(input$num), main = title)
     })    
 }
