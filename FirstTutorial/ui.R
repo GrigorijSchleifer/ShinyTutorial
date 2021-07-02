@@ -7,18 +7,14 @@ ui <- fluidPage(
                 min = 1,
                 max = 100),
     
-    column(6, 
-           fluidRow(column(4, numericInput("a", label = "A", 0, width = '100%')),
-                    column(4, numericInput("b", label = "B", 0, width = '100%'))),
-           fluidRow(column(4, numericInput("c", label = "C", 0, width = '100%')),
-                    column(4, numericInput("d", label = "D", 0, width = '100%')))),
+    column(5, 
+           fluidRow(column(4, numericInput("Hg", label = "Hg", 15, min = 0, max = 20, width = '100%')),
+                    column(4, numericInput("SaO2", label = "SaO2", 100, min = 0, max = 100, width = '100%')),
+                    column(4, numericInput("SvO2", label = "SvO2", 100, min = 0, max = 100, width = '100%')),
+                    column(4, numericInput("PaO2", label = "PaO2", 100, min = 0, max = 100, width = '100%')),
+                    column(4, numericInput("PvO2", label = "PvO2", 100, min = 0, max = 100, width = '100%')))),
         
-    
-    
-    numericInput("Hg", "Hg", 100, min = 0, max = 100),
-    numericInput("SaO2", "SaO2", 100, min = 0, max = 100),
-    numericInput("SvO2", "SvO2", 80, min = 0, max = 100),
-    numericInput("PaO2", "PaO2", 100, min = 0, max = 100),
+
     
     
     numericInput("PvO2", "PvO2", 100, min = 0, max = 100),
