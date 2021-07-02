@@ -1,6 +1,6 @@
 library(shiny)
 
-ui <- fluidPage(
+ui <- fluidPage(theme = shinytheme("superhero"),
     sliderInput(inputId = "num",
                 label = "Choose a number",
                 value = 25,
