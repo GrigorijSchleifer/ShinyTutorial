@@ -1,31 +1,35 @@
 library(shiny)
 
 ui <- fluidPage(theme = shinytheme("superhero"),
-    sliderInput(inputId = "num",
-                label = "Choose a number",
-                value = 25,
-                min = 1,
-                max = 100),
     
-    column(5, 
+    column(width = 12, 
            fluidRow(column(4, numericInput("Hg", label = "Hg", 15, min = 0, max = 20, width = '100%')),
                     column(4, numericInput("SaO2", label = "SaO2", 100, min = 0, max = 100, width = '100%')),
-                    column(4, numericInput("SvO2", label = "SvO2", 100, min = 0, max = 100, width = '100%')),
+                    column(4, numericInput("ScvO2", label = "ScvO2", 100, min = 0, max = 100, width = '100%')),
                     column(4, numericInput("PaO2", label = "PaO2", 100, min = 0, max = 100, width = '100%')),
-                    column(4, numericInput("PvO2", label = "PvO2", 100, min = 0, max = 100, width = '100%')))),
-        
+                    column(4, numericInput("PvO2", label = "PvO2", 100, min = 0, max = 100, width = '100'))
+                    )
+           )
+    )
 
     
-    
-    numericInput("PvO2", "PvO2", 100, min = 0, max = 100),
-    numericInput("SaO2", "SaO2", 100, min = 0, max = 100),
-    numericInput("SaO2", "SaO2", 100, min = 0, max = 100),
-    numericInput("SaO2", "SaO2", 100, min = 0, max = 100),
-    numericInput("SaO2", "SaO2", 100, min = 0, max = 100),
-    numericInput("SaO2", "SaO2", 100, min = 0, max = 100),
-    
-    plotOutput(outputId = "hist")
-)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # 
 # rm(list = ls()) 
