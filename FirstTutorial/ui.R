@@ -1,4 +1,8 @@
+# https://grigorij-schleifer.shinyapps.io/FirstTutorial/
+
 library(shiny)
+library(shinythemes)
+library('rsconnect')
 
 ui <- fluidPage(
     theme = shinytheme("superhero"),
