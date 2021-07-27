@@ -2,6 +2,7 @@
 
 library(shiny)
 library(shinythemes)
+library(tidyverse)
 library('rsconnect')
 
 
@@ -11,7 +12,7 @@ ui <- fluidPage(
     titlePanel(title = h4("Risk scores in different countries", align="center")),
     sidebarPanel(
         selectInput(inputId = "country", label = "Select country:",
-                choices = as.character(data_v$G01Q06)),
+                choices = data_v$G01Q06),
     
     mainPanel(
         plotOutput("scores_barplot",height = 500))
