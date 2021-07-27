@@ -4,28 +4,44 @@ library(shiny)
 library(shinythemes)
 library('rsconnect')
 
+
+data_v <- read.csv("/Users/grigorijschleifer/Desktop/R/Shiny/ShinyTutorial/dt_countries.csv")
+
 ui <- fluidPage(
-    theme = shinytheme("superhero"),
+    titlePanel(title = h4("Risk scores in different countries", align="center")),
+    sidebarPanel(
+        selectInput(inputId = "country", label = "Select country:",
+                choices = as.character(data_v$G01Q06)),
     
-    column(width = 10,
-           fluidRow(
-               column(4, numericInput(
-                   "Hg", label = "Hg", 15, min = 0, max = 20, width = '100%')),
-               column(4, numericInput(
-                   "SaO2", label = "SaO2", 100, min = 0, max = 100, width = '100%')),
-               column(4, numericInput(
-                   "ScvO2", label = "ScvO2", 100, min = 0, max = 100, width = '100%')),
-               column(4, numericInput(
-                   "PaO2", label = "PaO2", 100, min = 0, max = 100, width = '100%')),
-               column(4, numericInput(
-                   "PvO2", label = "PvO2", 100, min = 0, max = 100, width = '100%'))
-               )
-           ),
-    
-    mainPanel(verbatimTextOutput(outputId = "calculation"))
-)
+    mainPanel(
+        plotOutput("scores_barplot",height = 500))
+))
 
 
+
+
+
+# ui <- fluidPage(
+#     theme = shinytheme("superhero"),
+#     
+#     column(width = 10,
+#            fluidRow(
+#                column(4, numericInput(
+#                    "Hg", label = "Hg", 15, min = 0, max = 20, width = '100%')),
+#                column(4, numericInput(
+#                    "SaO2", label = "SaO2", 100, min = 0, max = 100, width = '100%')),
+#                column(4, numericInput(
+#                    "ScvO2", label = "ScvO2", 100, min = 0, max = 100, width = '100%')),
+#                column(4, numericInput(
+#                    "PaO2", label = "PaO2", 100, min = 0, max = 100, width = '100%')),
+#                column(4, numericInput(
+#                    "PvO2", label = "PvO2", 100, min = 0, max = 100, width = '100%'))
+#                )
+#            ),
+#     
+#     verbatimTextOutput(outputId = "calculation")
+# )
+# 
 
 
 
