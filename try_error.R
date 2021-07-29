@@ -13,6 +13,8 @@ new_data <- data_v %>%
 
 colnames(new_data) <- c("id", "Country", "ASA-Class", "Apfel-Score", "NYHA-Score", "ARISCAT-Score","rRCI", "POSPOM")
 
+
+
 new_data %>% 
     gather(key = "Question",
            value = "Answer",

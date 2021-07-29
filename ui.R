@@ -5,7 +5,7 @@ library(shinythemes)
 library(tidyverse)
 library('rsconnect')
 
-data_v <- read.csv("/Users/grigorijschleifer/Desktop/R/Shiny/ShinyTutorial/dt_countries.csv")
+survey_data <- read.csv("/Users/grigorijschleifer/Desktop/R/Shiny/ShinyTutorial/only_scores.csv")
 
 choices = c("Albania", "Austria", "Belarus", "Belgium", "Bosnia and Herzegovina", 
             "Bulgaria", "Croatia", "Cyprus", "Czechia", "Denmark", "Estonia", 
