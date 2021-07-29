@@ -14,11 +14,11 @@ new_data <- data_v %>%
 colnames(new_data) <- c("id", "Country", "ASA-Class", "Apfel-Score", "NYHA-Score", "ARISCAT-Score","rRCI", "POSPOM")
 
 
-
-new_data %>% 
+new_data <- new_data %>% 
     gather(key = "Question",
            value = "Answer",
            c(-id, -Country)) %>% 
+    mutate(Answer = as.factor(Answer)) %>% 
+    dplyr::filter(!is.na(Answer)) %>% 
     group_by(Country) %>% 
-    tapply(vector, index, function)
-    
+    summary()
