@@ -1,6 +1,7 @@
 # https://grigorij-schleifer.shinyapps.io/FirstTutorial/
 
 library(shiny)
+library(shinydashboard)
 library(shinythemes)
 library(tidyverse)
 library('rsconnect')
@@ -10,6 +11,7 @@ data_v <- read.csv("/Users/grigorijschleifer/Desktop/R/Shiny/ShinyTutorial/dt_co
 
 ui <- fluidPage(
     titlePanel(title = h4("Risk scores in different countries", align="center")),
+    
     sidebarPanel(
         selectInput(inputId = "country", label = "Select country:",
                 choices = data_v$G01Q06),
