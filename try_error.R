@@ -1,15 +1,15 @@
 survey_data %>%
     select(., -X) %>%
     dplyr::filter(
-        Country == "Italy" &
-            !is.na(ASA.Class)) %>%
+        Country == "Finland") %>%
     gather(key = "Question",
            value = "Answer",
            c(-id, -Country)) %>%
-    dplyr::filter(Answer == "Yes") %>% 
+    # dplyr::filter(Answer == "Yes") %>% 
     count(Question, Answer) %>%
+    group_by(Question) %>% 
     ggplot(aes(x = Question, y = n)) +
-    geom_bar(stat = "identity") 
+    geom_col() 
 
 
 
