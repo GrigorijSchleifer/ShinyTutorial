@@ -1,21 +1,32 @@
 # https://grigorij-schleifer.shinyapps.io/FirstTutorial/
 
 library(shiny)
-library(shinydashboard)
 library(shinythemes)
 library(tidyverse)
 library('rsconnect')
 
-
 data_v <- read.csv("/Users/grigorijschleifer/Desktop/R/Shiny/ShinyTutorial/dt_countries.csv")
+
+choices = c("Albania", "Austria", "Belarus", "Belgium", "Bosnia and Herzegovina", 
+            "Bulgaria", "Croatia", "Cyprus", "Czechia", "Denmark", "Estonia", 
+            "Finland", "France", "Germany", "Greece", "Hungary", "Iceland", 
+            "Ireland", "Israel", "Italy", "Kazakhstan", "Kosovo", "Latvia", 
+            "Liechtenstein", "Lithuania", "Malta", "Moldova", "Netherlands", 
+            "Norway", "Poland", "Portugal", "Romania", "Russia", 
+            "Serbia", "Slovakia", "Slovenia", "Spain", "Sweden", "Switzerland", 
+            "Turkey", "Ukraine", "United Kingdom (UK)", "Other")
 
 ui <- fluidPage(
     titlePanel(title = h4("Risk scores in different countries", align="center")),
     
-    sidebarPanel(
-        selectInput(inputId = "country", label = "Select country:",
-                choices = data_v$G01Q06),
-    
+    sidebarLayout(
+        sidebarPanel(
+            selectInput(inputId = "country", 
+                        label = "Select country:",
+                        selected = "Germany", 
+                        choices = choices),
+        ), 
+        
     mainPanel(
         plotOutput("scores_barplot",height = 500))
 ))

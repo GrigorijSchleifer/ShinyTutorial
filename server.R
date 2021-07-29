@@ -1,5 +1,6 @@
 server <- function(input, output) {
     # country <- reactive({ input$country })
+    data_v <- read.csv("/Users/grigorijschleifer/Desktop/R/Shiny/ShinyTutorial/dt_countries.csv")
     
     output$scores_barplot <- renderPlot({
         data_v %>% 
