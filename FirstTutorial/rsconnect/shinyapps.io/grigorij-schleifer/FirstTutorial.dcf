@@ -1,0 +1,13 @@
+name: FirstTutorial
+title: FirstTutorial
+username:
+account: grigorij-schleifer
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 4363042
+bundleId: 4797174
+url: https://grigorij-schleifer.shinyapps.io/FirstTutorial/
+when: 1625692014.87281
+lastSyncTime: 1625692014.87282
+asMultiple: FALSE
+asStatic: FALSE
