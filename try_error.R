@@ -11,7 +11,7 @@ counted_result <- survey_data %>%
 
 
 df_for_scores <- data.frame(score = c("ASA.Class", "Apfel.Score", "NYHA.Score", "ARISCAT.Score", "rRCI", "POSPOM"),
-                            n = c(1,0,0,0,0,0))
+                            n = c(0,0,0,0,0,0))
 
 for(i in counted_result$Question) {
     df_for_scores$n[df_for_scores$score == i] <- counted_result$n[counted_result$Question == i]
