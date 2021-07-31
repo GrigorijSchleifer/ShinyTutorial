@@ -11,6 +11,9 @@ survey_data %>%
     ggplot(aes(x = Question, y = n)) +
     geom_col() 
 
+df_for_scores <- data.frame(a = c(1,2,3,4,5,6,7,8),
+           b = c("A", "B", "C", "D", "E", "F", "G", "H"))
+
 
 
 # scores_only <- survey_data %>%
